@@ -65,3 +65,6 @@ if uploaded_ﬁle is not None:
         st.dataframe(st.session_state.uploaded_data.head()) 
     except Exception as e: 
         st.error(f"An error occurred while reading the ﬁle: {e}") 
+
+# Checkbox for indicating data analysis need 
+analyze_data_checkbox = st.checkbox("Analyze CSV Data with AI") 
