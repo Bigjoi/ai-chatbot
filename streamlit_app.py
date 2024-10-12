@@ -56,8 +56,7 @@ if user_input := st.chat_input("Type your message here..."):
     st.session_state.chat_history.append(("user", user_input)) 
     st.chat_message("user").markdown(user_input) 
  
-    # Determine if user input is a request for data analysis and the checkbox is 
-selected 
+    # Determine if user input is a request for data analysis and the checkbox is selected 
     if model: 
         try: 
             if st.session_state.uploaded_data is not None and 
