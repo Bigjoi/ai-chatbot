@@ -1,13 +1,12 @@
-import streamlit as st
-import google-generativeai as genai
-
-st.title("🎈 BigJoi ChatBOT")
-#user_input = st.text_input("Id Name : ", placeholder="Type your name here...")
-#st.chat_message(f"user Input : {user_input}")
-
-
+import streamlit as st 
+import google.generativeai as genai 
+ 
+st.title("🐧 My chatbot app") 
+st.subheader("Conversation") 
+ 
 # Capture Gemini API Key 
-gemini_api_key = st.text_input("Gemini API Key: ", placeholder="Type your API Key here...", type="password") 
+    gemini_api_key = st.text_input("Gemini API Key: ", placeholder="Type your API Key 
+    here...", type="password") 
  
 # Initialize the Gemini Model 
 if gemini_api_key: 
@@ -47,4 +46,4 @@ if user_input := st.chat_input("Type your message here..."):
             st.session_state.chat_history.append(("assistant", bot_response)) 
             st.chat_message("assistant").markdown(bot_response) 
         except Exception as e: 
-            st.error(f"An error occurred while generating the response: {e}")
+            st.error(f"An error occurred while generating the response: {e}") 
