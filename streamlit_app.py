@@ -46,3 +46,22 @@ if user_input := st.chat_input("Type your message here..."):
             st.chat_message("assistant").markdown(bot_response) 
         except Exception as e: 
             st.error(f"An error occurred while generating the response: {e}") 
+
+# Add a ﬁle uploader for CSV data 
+st.subheader("Upload CSV for Analysis") 
+uploaded_ﬁle = st.ﬁle_uploader("Choose a CSV ﬁle", type=["csv"]) 
+
+ 
+
+
+if uploaded_ﬁle is not None: 
+    try: 
+        # Load the uploaded CSV ﬁle 
+        st.session_state.uploaded_data = pd.read_csv(uploaded_ﬁle) 
+        st.success("File successfully uploaded and read.") 
+         
+        # Display the content of the CSV 
+        st.write("### Uploaded Data Preview") 
+        st.dataframe(st.session_state.uploaded_data.head()) 
+    except Exception as e: 
+        st.error(f"An error occurred while reading the ﬁle: {e}") 
