@@ -62,7 +62,7 @@ if user_input := st.chat_input("Type your message here..."):
             if "analyze" in user_input.lower() or "insight" in user_input.lower():
                 # Create a description of the data for the AI model
                 data_description = st.session_state.uploaded_data.describe(include='all').to_string()
-                prompt = f"Analyze the following dataset and provide insights based on this request: {user_input}\n\n{data_description}"
+                prompt = f"{user_input}\n\n{data_description}"
 
                 # Generate AI response for the data analysis
                 if model:
