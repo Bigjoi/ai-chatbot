@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import google.generativeai as genai
+import google-generativeai as genai
 
 # Set up the Streamlit app layout
 st.title("🐧 My Chatbot and Data Analysis App")
